@@ -1,6 +1,10 @@
 #Python Object Oriented Programming
 #Corey Schafer https://www.youtube.com/watch?v=rq8cL2XMM5M&list=PL-osiE80TeTsqhIuOqKhwlXsIBIdSeYtc&index=3
 
+#regular method -> instance method (self) - automatically takes the instance as the first argument
+#class method -> class method (cls) - automatically takes the class as the first argument
+#static method -> does not take instance or class as the first argument (like a regular function
+
 class Employee:
 
     #class variable
