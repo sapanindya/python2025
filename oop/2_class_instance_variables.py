@@ -4,6 +4,7 @@
 class Employee:
 
     #class variable
+    no_of_emp = 0
     raise_amount = 1.05
 
     def __init__(self,first,last,pay):
@@ -11,6 +12,7 @@ class Employee:
         self.last = last
         self.pay = pay
         self.email = first+'.'+last+'@company.com'
+        Employee.no_of_emp += 1
 
     def fullname(self): #instance method always get the instance as an argument
         return f"{self.first} {self.last}"   
@@ -35,3 +37,8 @@ print("Namespace of emp1: \n",emp1.__dict__)
 #result  {'first': 'Anindya', 'last': 'Bose', 'pay': 10500, 'email': 'Anindya.Bose@company.com'} - there is no raise amount variable
 
 print("Namespace of Employee class: \n",Employee.__dict__)
+
+print("Number of object created: ", Employee.no_of_emp)
+
+emp1.no_of_emp = 4
+print(emp1.__dict__)
