@@ -75,7 +75,7 @@ emp_str_2 = 'Bobo-Bose-30000'
 emp_str_3 = 'Tinni-Bose-90000'
 
 
-print("\nCreating new employees from string\n")
+print("\n Creating new employees from string\n")
 new_emp_1 = Employee2.from_string(emp_str_1)
 new_emp_2 = Employee2.from_string(emp_str_2)
 new_emp_3 = Employee2.from_string(emp_str_3)
@@ -83,3 +83,6 @@ new_emp_3 = Employee2.from_string(emp_str_3)
 print( new_emp_1.fullname(), new_emp_1.email,new_emp_1.pay)
 print( new_emp_2.fullname(), new_emp_2.email,new_emp_2.pay)
 print( new_emp_3.fullname(), new_emp_3.email,new_emp_3.pay)
+
+###--------------------------------------------------------------------------------------------------------- #
+# Static Method
