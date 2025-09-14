@@ -3,7 +3,7 @@
 
 #regular method -> instance method (self) - automatically takes the instance as the first argument
 #class method -> class method (cls) - automatically takes the class as the first argument
-#static method -> does not take instance or class as the first argument (like a regular function
+#static method -> does not take instance or class as the first argument like a regular function
 
 class Employee:
 
@@ -25,7 +25,9 @@ class Employee:
         self.pay = int(self.pay * Employee.raise_amount ) # we could also use self.raise_amount
 
 
-    @classmethod #this decorator indicates this method gets class as the first argument unlike instance method that gets instance("self)") as the first argument
+    @classmethod 
+    #this decorator indicates this method gets class as the first argument unlike instance method that 
+    # gets instance("self)") as the first argument
     def set_raise_amount(cls,amount) :
         cls.raise_amount = amount  
 
@@ -65,10 +67,17 @@ class Employee2:
     def fullname(self): #instance method always get the instance as an argument
         return f"{self.first} {self.last}"   
     
-    @classmethod #this decorator indicates this method gets class as the first argument
-    def from_string(cls,emp_str) :  #class method is used as an alternative constructor, "from_string" is a convention
+    @classmethod 
+    #this decorator indicates this method gets class as the first argument
+    def from_string(cls,emp_str) :  #class method is used as an alternative constructor, "from" is a convention
         first,last,pay = emp_str.split('-')
         return cls(first,last,pay)  #cls() will call the __init__ method of the class
+    
+    @staticmethod
+    def is_workday(day):
+        if day.weekday() == 5 or day.weekday() == 6:
+            return False
+        return True
     
 emp_str_1 = 'Raju-Bose-70000'
 emp_str_2 = 'Bobo-Bose-30000'
@@ -85,4 +94,14 @@ print( new_emp_2.fullname(), new_emp_2.email,new_emp_2.pay)
 print( new_emp_3.fullname(), new_emp_3.email,new_emp_3.pay)
 
 ###--------------------------------------------------------------------------------------------------------- #
-# Static Method
+# use of Static Method
+
+import datetime
+my_date = datetime.date(2024,6,8) # Saturday
+print("\n",my_date.strftime("%a"))
+print("\n ",my_date.strftime("%A"))
+print("\n ",my_date.strftime("%b"))
+
+
+print("\n is my date a workday?",Employee2.is_workday(my_date)) 
+
