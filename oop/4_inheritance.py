@@ -83,6 +83,10 @@ mgr1.add_employee(dev2)
 
 mgr1.list_employees()
 
-
+#isintance method
 print( "Is mgr1 an instance of Employee?",isinstance(mgr1,Employee))
 print( "Is mgr1 an instance of Developer?",isinstance(mgr1,Developer))
+
+#issubclass
+print("Is Manager a subclass of Developer?",issubclass(Manager,Developer))
+print("Is Manager a subclass of Employee?",issubclass(Manager,Employee))
