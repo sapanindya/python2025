@@ -54,12 +54,11 @@ class Manager(Employee):
             self.employees.remove(emp)   
 
     def list_employees(self):
+        print(f"\n{self.fullname()} manages:")
         for emp in self.employees:
-            print(emp.fullname())          
+            print('--->',emp.fullname())          
 
        
-        
-
 dev1 = Developer('Anindya','Bose',10000,'SQL')
 dev2 = Developer('Arnesh','Bose',20000,'Python')
 
@@ -76,3 +75,14 @@ print("Dev1 pay after:",dev1.pay)
 
 print(f"Dev1: {dev1.fullname()} - Programming Language: {dev1.prog_lang}")
 print(f"Dev2: {dev2.fullname()} - Programming Language: {dev2.prog_lang}")
+
+
+# Create Manager
+mgr1 = Manager('Corey','Schafer',110000,[dev1])
+mgr1.add_employee(dev2)
+
+mgr1.list_employees()
+
+
+print( "Is mgr1 an instance of Employee?",isinstance(mgr1,Employee))
+print( "Is mgr1 an instance of Developer?",isinstance(mgr1,Developer))
