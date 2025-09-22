@@ -41,4 +41,6 @@ print("Namespace of Employee class: \n",Employee.__dict__)
 print("Number of object created: ", Employee.no_of_emp)
 
 emp1.no_of_emp = 4
-print(emp1.__dict__)
+emp1.likes = "Biryani"
+print("emp1:",emp1.__dict__)
+print("Employee class no_of_emp variable: ", Employee.no_of_emp)
