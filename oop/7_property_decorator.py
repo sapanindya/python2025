@@ -8,7 +8,7 @@ class Employee():
         #self.email = first + '.' + last +'@company.com'
 
     @property
-    #this decorator converts a property into method, no code changes required for people who is using this class
+    # #this decorator converts a property into method, no code changes required for people who is using this class
     def email(self):
         return self.first + '.' + self.last +'@company.com'
     

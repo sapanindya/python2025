@@ -74,7 +74,7 @@ class Employee2:
         return cls(first,last,pay)  #cls() will call the __init__ method of the class
     
     @staticmethod
-    def is_workday(day):
+    def is_workday(day):  # works like a regular method
         if day.weekday() == 5 or day.weekday() == 6:
             return False
         return True

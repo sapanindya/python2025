@@ -66,7 +66,8 @@ dev2 = Developer('Arnesh','Bose',20000,'Python')
 # print(dev2.email)
 
 #help() method shows the method resolution order (MRO) - the order in which Python looks for methods and attributes
-#print(help(Developer))
+
+print("Method inheritance of Developer Class: \n",help(Developer))
 
 print("Dev1 pay before:",dev1.pay)
 dev1.apply_raise()
