@@ -12,7 +12,7 @@ import logging
 # 👉 Default logging level is WARNING, so debug and info won’t show unless you change it.
 
 
-print("Before Changing Level:\n")
+print("Before Changing Level:\n ----------------------- \n")
 logging.debug("Debug message")  # Will not print if default(DEBUG) is not changed
 logging.info("Info message") # Will not print if default(DEBUG) is not changed
 logging.warning("Warning message")
@@ -22,32 +22,28 @@ logging.critical("Critical message\n")
 
 # Confugure logging
 logging.basicConfig(
-    level=logging.INFO, #mininum log level to capture
-    format = "%(asctime)s - %(name)s - %(levelname)s - %(lineno)s",
-    filename="app.log", # Optional, saves log to file
-    filemode = "a", # a = append, w = overwrite
-
+    level=logging.DEBUG, #mininum log level to capture
+    #force=True
 )
 
-logging.basicConfig(level=logging.INFO)
 print("After Changing Level:\n")
-logging.debug("Debug message")  # Will not print if default(DEBUG) is not changed
-logging.info("Info message") # Will not print if default(DEBUG) is not changed
+
+logging.debug("Debug message")
+logging.info("Info message")
 logging.warning("Warning message")
 logging.error("Error message")
-logging.critical("Critical message")
+logging.critical("Critical message \n")
 
 
+# It will still not print Info and Debug because of the following reasons
+# We called logging.warning(...) before any explicit configuration.
+# The logging module sees no handlers and auto-calls basicConfig() internally 
+# with defaults (level=WARNING, a StreamHandler to stderr).
+# Later calls to logging.basicConfig(...) are ignored because the root logger already has handlers.
+# Result: root logger remains at WARNING and nothing is written to app.log.
+#we can set force=True to forcefully change the handler and then print second statemsn
 
-# You can customize log output with format specifiers:
+print("Handler's Name:",logging.getHandlerNames())
+print(logging.getLogger(__name__))
 
-# Specifier	          Meaning
-# %(asctime)s	      Timestamp
-# %(levelname)s	      Logging level (INFO, ERROR, etc.)
-# %(message)s	      Actual log message
-# %(name)s	          Logger name
-# %(filename)s	      File name of script
-# %(lineno)d	      Line number of log call
-# %(process)d	      Process ID
-# %(thread)d	      Thread ID
 
